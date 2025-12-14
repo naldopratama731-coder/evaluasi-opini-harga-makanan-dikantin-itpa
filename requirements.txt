@@ -1,4 +1,5 @@
 streamlit
 matplotlip
 nltk
-reportlab
+pandas
+numpy
