@@ -152,17 +152,18 @@ if st.session_state.last_result:
     )
 
 # =============================
-# GRAFIK (OTOMATIS)
+# GRAFIK (MUNCUL SETELAH PROSES)
 # =============================
-st.subheader("📈 Grafik Kepuasan Harga")
+if st.session_state.last_result:
+    st.subheader("📈 Grafik Kepuasan Harga")
 
-fig, ax = plt.subplots()
-ax.bar(
-    st.session_state.counter.keys(),
-    st.session_state.counter.values()
-)
-ax.set_xlabel("Kategori")
-ax.set_ylabel("Jumlah")
-plt.xticks(rotation=20)
+    fig, ax = plt.subplots()
+    ax.bar(
+        st.session_state.counter.keys(),
+        st.session_state.counter.values()
+    )
+    ax.set_xlabel("Kategori")
+    ax.set_ylabel("Jumlah")
+    plt.xticks(rotation=20)
 
-st.pyplot(fig)
+    st.pyplot(fig)
